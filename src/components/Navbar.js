@@ -1,11 +1,22 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-// import  logo from '../images/logo.png';
+import Logo from '../assets/logo.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link } from 'react-scroll'
 
+const StyledLogo = styled(Logo)`
+  width: 3rem;
+  height: 3rem;
+  position: relative;
+  z-index: 10;
+`
+
 const Wrapper = styled.div`
-  background: var(--color-darker);
+  background-image: linear-gradient(
+    to right,
+    var(--primary-dark-1),
+    var(--primary-dark-3)
+  );
   color: var(--color-white);
   width: 100%;
   position: fixed;
@@ -34,55 +45,39 @@ const LogoContainer = styled.div`
   &:focus {
     opacity: 0.75;
   }
-
-  img {
-    margin-top: 10px;
-    width: 100%;
-    object-fit: cover;
-    object-position: center center;
-  }
 `
 const MenuButton = styled.div`
-  position: relative;
   width: 25px;
-  height: 30px;
+  height: 13px;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 6;
   cursor: pointer;
-`
-const MenuButtonBurger = styled.div`
-  &,
-  &::after,
-  &::before {
+  position: relative;
+  /* background: pink; */
+
+  div {
     width: 100%;
-    height: 1px;
-    background: var(--color-white);
+    height: 0.2rem;
+    background: var(--white);
+    position: absolute;
+    transform: skewX(-35deg);
     transition: all 0.3s ease;
   }
 
-  &::after,
-  &::before {
-    position: absolute;
-    content: '';
-  }
-
-  & {
-    background: ${props => (props.isNavOpen ? 'transparent' : '')};
-  }
-
-  &::before {
-    transform: translateY(-8px);
+  div:first-child {
+    top: ${props => (props.isNavOpen ? 'auto' : 0)};
     transform: ${props => (props.isNavOpen ? 'rotate(45deg)' : '')};
   }
-  &::after {
-    transform: translateY(8px);
-    transform: ${props => (props.isNavOpen ? 'rotate(-45deg)' : '')};
+
+  div:nth-child(2) {
+    opacity: ${props => (props.isNavOpen ? 0 : 1)};
   }
 
-  @media ${props => props.theme.mediaQueries.small} {
-    display: none;
+  div:last-child {
+    bottom: ${props => (props.isNavOpen ? 'auto' : 0)};
+    transform: ${props => (props.isNavOpen ? 'rotate(-45deg)' : '')};
   }
 `
 
@@ -92,7 +87,12 @@ const Navigation = styled.div`
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: var(--color-darker);
+  background-image: linear-gradient(
+    to right,
+    var(--primary-dark-1),
+    var(--primary-dark-3)
+  );
+
   z-index: 5;
   transition: all 0.4s ease;
   opacity: ${props => (props.isNavOpen ? 1 : 0)};
@@ -101,6 +101,21 @@ const Navigation = styled.div`
 
   display: flex;
   align-items: center;
+
+  div {
+    z-index: -1;
+    position: absolute;
+    width: 140%;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    /* background: pink; */
+    opacity: 0.03;
+    svg {
+      width: 100%;
+      height: auto;
+    }
+  }
 
   @media ${props => props.theme.mediaQueries.small} {
     position: static;
@@ -139,11 +154,11 @@ const NavLink = styled.li`
   }
 
   a {
-    font-size: 2.4rem;
+    font-family: var(--bjorn);
+    font-size: 3rem;
     padding: 0.1em 0.3em;
     text-decoration: none;
-    color: var(--color-white);
-    font-weight: var(--bold);
+    color: var(--white);
     text-transform: uppercase;
 
     @media ${props => props.theme.mediaQueries.small} {
@@ -162,42 +177,6 @@ const NavLink = styled.li`
     &:first-child {
       display: none;
     }
-  }
-`
-const ContactList = styled.ul`
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 8%;
-  transform: ${props =>
-    props.isNavOpen ? 'translateX(0)' : 'translateX(-100%)'};
-  transition: ${props =>
-    props.isNavOpen
-      ? 'transform 0.5s 0.35s cubic-bezier(0.6,-0.08, 0.44, 1.52)'
-      : ''};
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  list-style: none;
-
-  @media ${props => props.theme.mediaQueries.small} {
-    display: none;
-  }
-`
-
-const ListItem = styled.li`
-  padding: 0.3em;
-  font-size: 1.8rem;
-  line-height: 1;
-
-  a {
-    color: var(--color-white);
-    font-size: 2.4rem;
-    text-decoration: none;
-  }
-
-  &:not(:last-child) {
-    margin-right: 1rem;
   }
 `
 
@@ -219,25 +198,30 @@ const Navbar = props => {
         <StyledNavbar>
           <LogoContainer>
             <Link to="home" spy={true} smooth={true} duration={1000}>
-              {/* <img src={logo} alt="felix lopez logo" /> */}
+              <StyledLogo />
             </Link>
           </LogoContainer>
 
-          <MenuButton onClick={() => toggleNav()}>
-            <MenuButtonBurger isNavOpen={isNavOpen} />
+          <MenuButton onClick={() => toggleNav()} isNavOpen={isNavOpen}>
+            <div></div>
+            <div></div>
+            <div></div>
           </MenuButton>
 
           <Navigation isNavOpen={isNavOpen}>
+            <div>
+              <Logo />
+            </div>
             <NavList isNavOpen={isNavOpen}>
               <NavLink>
                 <Link
                   onClick={() => toggleNav()}
-                  to="home"
+                  to="services"
                   spy={true}
                   smooth={true}
                   duration={1000}
                 >
-                  Home
+                  Services
                 </Link>
               </NavLink>
               <NavLink>
@@ -255,13 +239,25 @@ const Navbar = props => {
               <NavLink>
                 <Link
                   onClick={() => toggleNav()}
+                  to="products"
+                  spy={true}
+                  offset={-62}
+                  smooth={true}
+                  duration={1000}
+                >
+                  products
+                </Link>
+              </NavLink>
+              <NavLink>
+                <Link
+                  onClick={() => toggleNav()}
                   to="about"
                   spy={true}
                   offset={-62}
                   smooth={true}
                   duration={1000}
                 >
-                  About
+                  about
                 </Link>
               </NavLink>
               <NavLink>
@@ -273,44 +269,10 @@ const Navbar = props => {
                   smooth={true}
                   duration={1000}
                 >
-                  Contact
+                  contact
                 </Link>
               </NavLink>
             </NavList>
-            <ContactList isNavOpen={isNavOpen}>
-              <ListItem>
-                <a href="mailto:hello@felixlopez.tech">
-                  <FontAwesomeIcon icon="envelope" />
-                </a>
-              </ListItem>
-              <ListItem>
-                <a
-                  href="https://github.com/felixlopz"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FontAwesomeIcon icon={['fab', 'github']} />
-                </a>
-              </ListItem>
-              <ListItem>
-                <a
-                  href="https://www.linkedin.com/in/felix-lopez-a97a31190/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FontAwesomeIcon icon={['fab', 'linkedin']} />
-                </a>
-              </ListItem>
-              <ListItem>
-                <a
-                  href="https://www.instagram.com/felixlopz_/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FontAwesomeIcon icon={['fab', 'instagram']} />
-                </a>
-              </ListItem>
-            </ContactList>
           </Navigation>
         </StyledNavbar>
       </Container>

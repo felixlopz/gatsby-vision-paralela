@@ -17,8 +17,8 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
-    `gatsby-transformer-remark`,
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-remark`,
     `gatsby-background-image`,
     {
       resolve: `gatsby-plugin-google-analytics`,
@@ -41,5 +41,13 @@ module.exports = {
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /assets/,
+        },
+      },
+    },
   ],
 }

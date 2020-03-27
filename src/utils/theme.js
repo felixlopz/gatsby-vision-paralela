@@ -14,7 +14,7 @@ const theme = {
     primaryDarkTwo: '#33002F',
     primaryDarkThree: '#270025',
     secondary: '#00B8E7',
-    secondaryDark: '#460040',
+    secondaryDark: '#2192B0',
     tertiary: '#EBC500',
     tertiaryDark: '#463301',
     grayDark: '#424242',
