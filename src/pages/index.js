@@ -7,15 +7,19 @@ import GoToTop from '../components/GoToTop'
 
 // sections
 import Hero from '../sections/Hero'
-// import Portfolio from '../sections/Portfolio'
+import Services from '../sections/Services'
+import Products from '../sections/Products'
+import Portfolio from '../sections/Portfolio'
 import About from '../sections/About'
 import Footer from '../sections/Footer'
 
 const PortfolioIndex = ({ data, ...props }) => {
   return (
     <Layout location={props.location} title={''}>
-      <GoToTop />
       <Hero />
+      <Services />
+      <Products />
+      <Portfolio />
       <About />
       <Footer />
     </Layout>

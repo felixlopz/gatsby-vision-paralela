@@ -12,6 +12,10 @@ const StyledHeroForm = styled.form`
   margin: 0 auto;
   margin-top: 4.8rem;
   margin-bottom: 8rem;
+
+  @media ${props => props.theme.mediaQueries.theme} {
+    width: 50rem;
+  }
 `
 
 const Banner = styled.div`
@@ -56,14 +60,14 @@ const Hero = () => {
             Tools and Services <br></br> for your Brand
           </h1>
           <p className="text text--bold">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-            sodales
+            Lorem ipsum dolor sit amet, consectetur
+            <br></br>adipiscing elit. Nunc sodales
           </p>
         </div>
 
         <StyledHeroForm className="text-center">
-          <div className="form-row">
-            <div className="col-12">
+          <div className="form-row justify-content-between">
+            <div className="col-12 col-md-5">
               <div className="form-group">
                 <label htmlFor="name">name</label>
                 <input
@@ -76,7 +80,7 @@ const Hero = () => {
                 <span className="form-group__border"></span>
               </div>
             </div>
-            <div className="col-12">
+            <div className="col-12 col-md-5">
               <div className="form-group">
                 <label htmlFor="email">email</label>
                 <input

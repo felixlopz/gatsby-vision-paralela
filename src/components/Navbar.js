@@ -117,7 +117,7 @@ const Navigation = styled.div`
     }
   }
 
-  @media ${props => props.theme.mediaQueries.small} {
+  @media ${props => props.theme.mediaQueries.medium} {
     position: static;
     background: transparent;
     flex-basis: 30%;
@@ -202,7 +202,11 @@ const Navbar = props => {
             </Link>
           </LogoContainer>
 
-          <MenuButton onClick={() => toggleNav()} isNavOpen={isNavOpen}>
+          <MenuButton
+            className="d-md-none"
+            onClick={() => toggleNav()}
+            isNavOpen={isNavOpen}
+          >
             <div></div>
             <div></div>
             <div></div>

@@ -1,77 +1,28 @@
 import React from 'react'
 import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import logo from '../images/logo.png';
+import Logo from '../assets/logo.svg'
 
 const Wrapper = styled.section`
-  background: var(--color-darker);
-  color: var(--color-white);
-  padding: 6em 1.5em;
-  z-index: 2;
-  position: relative;
+  padding-top: 10rem;
+  background-image: linear-gradient(
+    to right,
+    var(--primary-dark-1),
+    var(--primary-dark-3)
+  );
 
-  @media ${props => props.theme.mediaQueries.smaller} {
-    padding: 6em 0;
-  }
+  color: var(--white);
 `
 
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-
-  @media ${props => props.theme.mediaQueries.smaller} {
-    max-width: 450px;
-    margin: 0 auto;
-  }
-`
-
-const TalkText = styled.p`
-  color: var(--color-white);
-  font-size: 2.6rem;
-  font-weight: var(--medium);
-  text-transform: capitalize;
-  line-height: 1.2;
-
-  @media ${props => props.theme.mediaQueries.smallest} {
-    font-size: 3rem;
-  }
-
-  @media ${props => props.theme.mediaQueries.smaller} {
-    font-size: 3.5rem;
-  }
-`
-const HightLighter = styled.span`
-  color: var(--color-light);
-  font-weight: var(--bold);
-`
-
-const ContactBox = styled.div`
-  margin: 7.5rem 0;
-`
-
-const Email = styled.a`
-  font-size: 2.4rem;
-  font-weight: var(--medium);
-  color: var(--color-light);
-  text-decoration: none;
-
-  @media ${props => props.theme.mediaQueries.smallest} {
-    font-size: 2.9rem;
-  }
-
-  @media ${props => props.theme.mediaQueries.medium} {
-    cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.42, 0, 0.61, 1.16);
-    &:hover {
-      color: var(--color-blue-lg);
-    }
-  }
+const StyledLogo = styled(Logo)`
+  width: 26rem;
+  height: 26rem;
+  opacity: 0.03;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 `
 
 const ContactList = styled.ul`
-  margin-top: 4rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -110,81 +61,65 @@ const ListItem = styled.li`
         transform: rotateZ(360deg);
       }
     }
-
-    &:hover,
-    &:focus-within {
-      background: ${props =>
-        props.color ? `var(--color-${props.color})` : ``};
-      border-radius: 0;
-    }
-
-    &:hover > a {
-      transform: rotateZ(360deg);
-    }
   }
 `
 
-const LogoBox = styled.div`
-  width: 100px;
-
-  img {
-    width: 100%;
-  }
-`
-
-const Copy = styled.p`
-  margin-top: 1rem;
-  font-size: 1rem;
-  font-weight: var(--bold);
-  text-transform: uppercase;
+const Copy = styled.div`
+  padding: 1.5em 0;
+  font-size: 0.5rem;
+  background: var(--primary-dark);
 `
 
 const Footer = props => {
   return (
-    <Wrapper id="contact">
-      <Container>
-        <TalkText>
-          let's talk and build <HightLighter> something awesome </HightLighter>{' '}
-          together!
-        </TalkText>
-        <ContactBox>
-          <Email href="mailto:hello@felixlopez.tech">
-            hello@felixlopez.tech
-          </Email>
-          <ContactList>
-            <ListItem color="green">
-              <a
-                href="https://github.com/felixlopz"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FontAwesomeIcon icon={['fab', 'github']} />
-              </a>
-            </ListItem>
-            <ListItem color="blue">
-              <a
-                href="https://www.linkedin.com/in/felix-lopez-a97a31190/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FontAwesomeIcon icon={['fab', 'linkedin']} />
-              </a>
-            </ListItem>
-            <ListItem color="red">
-              <a
-                href="https://www.instagram.com/felixlopz_/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FontAwesomeIcon icon={['fab', 'instagram']} />
-              </a>
-            </ListItem>
-          </ContactList>
-        </ContactBox>
-        <LogoBox>{/* <img src={logo} alt="felix lopez logo" /> */}</LogoBox>
-        <Copy>copyright &copy; 2019, Felix Lopez</Copy>
-      </Container>
-    </Wrapper>
+    <>
+      <Wrapper id="contact" className="container-fluid">
+        <div className="text-center">
+          <h1 className="title title--white">
+            Contact
+            <div className="title__underline title__underline--primary title__underline--center"></div>
+          </h1>
+          <p className="text text--bold text--white">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+            sodales
+          </p>
+          <div className="m-5">
+            <p className="text text--bold text--white mb-5">
+              visionparalela@gmail.com
+            </p>
+            <p className="text text--bold text--white mb-5">+58 41499814544</p>
+            <p className="text text--bold text--white">
+              Puerto Ordaz, Venezuela.
+            </p>
+          </div>
+        </div>
+        <ContactList>
+          <ListItem color="green">
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon icon={['fab', 'pinterest']} />
+            </a>
+          </ListItem>
+          <ListItem color="blue">
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon icon={['fab', 'youtube']} />
+            </a>
+          </ListItem>
+          <ListItem color="red">
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon icon={['fab', 'instagram']} />
+            </a>
+          </ListItem>
+        </ContactList>
+        <div className="text-center">
+          <StyledLogo />
+        </div>
+      </Wrapper>
+      <Copy className="container-fluid text-center">
+        <p className="text text--white">
+          All right reserved - vision paralela &copy; 2020
+        </p>
+      </Copy>
+    </>
   )
 }
 

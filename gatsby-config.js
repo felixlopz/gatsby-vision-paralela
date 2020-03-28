@@ -3,9 +3,9 @@ dotenv.config()
 
 module.exports = {
   siteMetadata: {
-    title: `Front End Web Developer`,
+    title: `Digital Agency`,
     author: `Felix Lopez`,
-    description: `Felix Lopez's personal portfolio made with gatsby and contentful`,
+    description: `Descripcion de la pagina web`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
   },
   plugins: [
