@@ -13,7 +13,7 @@ const StyledHeroForm = styled.form`
   margin-top: 4.8rem;
   margin-bottom: 8rem;
 
-  @media ${props => props.theme.mediaQueries.theme} {
+  @media ${props => props.theme.mediaQueries.medium} {
     width: 50rem;
   }
 `
