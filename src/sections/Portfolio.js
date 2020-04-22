@@ -1,6 +1,59 @@
 import React from 'react'
 import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Image from '../components/Image'
+
+const items = [
+  {
+    id: Math.random() + '',
+    title: 'Love without limits',
+    description:
+      'adjsldjaklsjkldjaklsjdkljakl dkljasjld jasakldj la jsldj aljsdkljalkj slkadjsaj ajlsj lkadjlkajs kljalsjakljkl jaklsda',
+    link: 'https://www.youtube.com/watch?v=CXk_7GJDdvA',
+    image: 'portfolio-1.jpg',
+  },
+  {
+    id: Math.random() + '',
+    title: 'Yummy dance video',
+    description:
+      'adjsldjaklsjkldjaklsjdkljakl dkljasjld jasakldj la jsldj aljsdkljalkj slkadjsaj ajlsj lkadjlkajs kljalsjakljkl jaklsda',
+    link: 'https://youtu.be/CrILMPuQw2A',
+    image: 'portfolio-2.jpg',
+  },
+  {
+    id: Math.random() + '',
+    title: 'Everything its better together',
+    description:
+      'adjsldjaklsjkldjaklsjdkljakl dkljasjld jasakldj la jsldj aljsdkljalkj slkadjsaj ajlsj lkadjlkajs kljalsjakljkl jaklsda',
+    link:
+      'https://www.pinterest.com/visionparalelave/fotos/juntos-todo-es-mejor/',
+    image: 'portfolio-3.jpg',
+  },
+  {
+    id: Math.random() + '',
+    title: 'Ivana',
+    description:
+      'adjsldjaklsjkldjaklsjdkljakl dkljasjld jasakldj la jsldj aljsdkljalkj slkadjsaj ajlsj lkadjlkajs kljalsjakljkl jaklsda',
+    link: 'https://www.pinterest.com/visionparalelave/fotos/ivana/',
+    image: 'portfolio-4.jpg',
+  },
+  {
+    id: Math.random() + '',
+    title: 'Emily Madrid',
+    description:
+      'adjsldjaklsjkldjaklsjdkljakl dkljasjld jasakldj la jsldj aljsdkljalkj slkadjsaj ajlsj lkadjlkajs kljalsjakljkl jaklsda',
+    link: 'https://www.pinterest.com/visionparalelave/fotos/emily-madrid/',
+    image: 'portfolio-5.jpg',
+  },
+  {
+    id: Math.random() + '',
+    title: 'Gabriela Mendoza',
+    description:
+      'adjsldjaklsjkldjaklsjdkljakl dkljasjld jasakldj la jsldj aljsdkljalkj slkadjsaj ajlsj lkadjlkajs kljalsjakljkl jaklsda',
+    link: 'https://www.pinterest.com/visionparalelave/fotos/gabriela-mendoza/',
+    image: 'portfolio-7.jpg',
+  },
+]
 
 const StyledPortofolio = styled.section`
   background: var(--black);
@@ -35,19 +88,18 @@ const Socials = styled.ul`
   }
 `
 
-const PortfolioItem = styled.article`
+const StyledPortfolioItem = styled.article`
   background: #0e0e0e;
   max-width: 346px;
 
+  &:not(:last-child) {
+    margin-bottom: 4rem;
+  }
+
   .item {
     &__heading {
-      width: 100%;
-      height: 235px;
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
+      width: 346px;
+      height: 360px;
     }
 
     &__body {
@@ -58,7 +110,7 @@ const PortfolioItem = styled.article`
       display: inline-block;
       font-family: var(--bjorn);
       font-size: 18px;
-      line-height: 14px;
+      line-height: 21px;
       margin-bottom: 1rem;
       color: white;
 
@@ -93,6 +145,32 @@ const PortfolioItem = styled.article`
   }
 `
 
+const PortfolioItem = ({ item }) => {
+  return (
+    <StyledPortfolioItem>
+      <div className="item__heading">
+        <Image filename={item.image} />
+      </div>
+      <div className="item__body">
+        <h3 className="item__title">{item.title}</h3>
+        <p className="item__text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc Lorem
+          ipsum dolor sit Lorem ipsum dolor sit amet, consectetur adipiscing
+          elit. Nunc Lorem ipsum dolor sit Lorem ipsum dolor sit amet,
+          consectetur adipiscing elit. Nunc Lorem ipsum dolor sit Lorem ipsum
+          dolor sit amet, consectetur adipiscing elit. Nunc Lorem ipsum dolor
+          sit
+        </p>
+        <div className="text-right">
+          <a target="_blank" href={item.link} className="item__link">
+            view more
+          </a>
+        </div>
+      </div>
+    </StyledPortfolioItem>
+  )
+}
+
 const Portfolio = props => {
   return (
     <StyledPortofolio className="container-fluid">
@@ -103,54 +181,42 @@ const Portfolio = props => {
             <div className="title__underline title__underline--secondary title__underline--center"></div>
           </h1>
           <p className="text text--bold text--white">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-            sodales
+            Let your inspiration goes wherever you wants, that is what we do.
           </p>
         </div>
         <div>
           <Socials>
             <li>
-              <a href="#">
+              <a
+                target="_blank"
+                href="https://www.pinterest.com/visionparalelave/"
+              >
                 <FontAwesomeIcon icon={['fab', 'pinterest-p']} />
               </a>
             </li>
             <li>
-              <a href="#">
+              <a
+                href="https://www.youtube.com/channel/UCqVoJR3qBp_dVOgGD8OYI5Q"
+                target="_blank"
+              >
                 <FontAwesomeIcon icon={['fab', 'youtube']} />
               </a>
             </li>
             <li>
-              <a href="#">
+              <a
+                href="https://www.instagram.com/visionparalela.ve/"
+                target="_blank"
+              >
                 <FontAwesomeIcon icon={['fab', 'instagram']} />
               </a>
             </li>
           </Socials>
         </div>
-
-        <PortfolioItem>
-          <div className="item__heading">
-            <img
-              src="https://images.pexels.com/photos/2724664/pexels-photo-2724664.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-              alt=""
-            />
-          </div>
-          <div className="item__body">
-            <h3 className="item__title">mountains and a house</h3>
-            <p className="item__text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-              Lorem ipsum dolor sit Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit. Nunc Lorem ipsum dolor sit Lorem ipsum dolor sit
-              amet, consectetur adipiscing elit. Nunc Lorem ipsum dolor sit
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-              Lorem ipsum dolor sit
-            </p>
-            <div className="text-right">
-              <a href="#" className="item__link">
-                view more
-              </a>
-            </div>
-          </div>
-        </PortfolioItem>
+        <div className="d-md-none">
+          {items.map((item, index) => (
+            <PortfolioItem key={index} item={item} />
+          ))}
+        </div>
       </div>
     </StyledPortofolio>
   )

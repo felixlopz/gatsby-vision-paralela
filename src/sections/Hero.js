@@ -60,8 +60,8 @@ const Hero = () => {
             Tools and Services <br></br> for your Brand
           </h1>
           <p className="text text--bold">
-            Lorem ipsum dolor sit amet, consectetur
-            <br></br>adipiscing elit. Nunc sodales
+            Work with us to create awesome content to overcome the obstacles you
+            face as a creative entrepreneur.
           </p>
         </div>
 

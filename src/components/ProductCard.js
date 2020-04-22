@@ -2,10 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Card = styled.article`
-  width: 20.7rem;
-  height: 22.5rem;
   background: var(--white);
-  box-shadow: 2px 2px 10px rgba(169, 169, 169, 0.2);
+  box-shadow: 10px 10px 80px rgba(169, 169, 169, 0.5);
   display: flex;
   flex-direction: column;
 
@@ -22,7 +20,7 @@ const Card = styled.article`
     }
 
     &__body {
-      padding: 0.8rem 1.1rem 0 0.8rem;
+      padding: 0.8rem 1.5rem 0 1.5rem;
     }
 
     &__title {
@@ -48,13 +46,13 @@ const Card = styled.article`
 
     &__text {
       font-family: var(--nexa-light);
-      font-size: 10px;
+      font-size: 12px;
       line-height: 10px;
     }
 
     &__footer {
       margin-top: auto;
-      padding: 0 1.1rem 0.8rem 1.1rem;
+      padding: 0 1.5rem 0.8rem 1.5rem;
     }
 
     &__price {
@@ -82,7 +80,7 @@ const ProductCard = ({ product }) => {
         <h3 className="card__title">{product.name}</h3>
         <p className="card__text">{product.desc}</p>
       </div>
-      <div className="card__footer d-flex justify-content-between">
+      <div className="card__footer d-flex justify-content-between mt-4">
         <span className="card__price">${product.price}</span>
         <a href="#" className="card__link">
           more info

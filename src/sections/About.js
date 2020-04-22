@@ -23,17 +23,16 @@ const About = props => {
           <div className="col-12">
             <h2 className="sub-title sub-title--primary ">Our Mision</h2>
             <p className="text text--white mb-5">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-              lacinia placerat commodo. Aliquam metus magna, pellentesque eu
-              euismod eget, vulputate eget nisi. Suspendisse magna orci,
+              To create and develop brands but not only for our clients, but to
+              experiment creating new things, discovering beautiful objects, and
+              challenge ourselves every day.
             </p>
           </div>
           <div className="col-12">
             <h2 className="sub-title sub-title--primary">Our vision</h2>
             <p className="text text--white mb-5">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-              lacinia placerat commodo. Aliquam metus magna, pellentesque eu
-              euismod eget, vulputate eget nisi. Suspendisse magna orci,
+              To become a global full service agency with clients and
+              collaborators all around the world.
             </p>
           </div>
         </div>

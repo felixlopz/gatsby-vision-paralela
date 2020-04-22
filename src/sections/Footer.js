@@ -65,9 +65,19 @@ const ListItem = styled.li`
 `
 
 const Copy = styled.div`
-  padding: 1.5em 0;
-  font-size: 0.5rem;
+  p {
+    padding: 0.8em 0;
+    font-size: 1.2rem;
+  }
   background: var(--primary-dark);
+`
+
+const Frase = styled.p`
+  font-family: var(--nexa-bold);
+  color: var(--primary);
+  font-style: normal;
+  font-size: 3.3rem;
+  line-height: 2.8rem;
 `
 
 const Footer = props => {
@@ -79,16 +89,18 @@ const Footer = props => {
             Contact
             <div className="title__underline title__underline--primary title__underline--center"></div>
           </h1>
-          <p className="text text--bold text--white">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-            sodales
-          </p>
+          <Frase>Let's work together</Frase>
           <div className="m-5">
             <p className="text text--bold text--white mb-5">
               visionparalela@gmail.com
             </p>
-            <p className="text text--bold text--white mb-5">+58 41499814544</p>
-            <p className="text text--bold text--white">
+            <p className="text text--white">+58 41499814544</p>
+            <p className="text text--white">+1 9132922711</p>
+            <p className="text text--bold text--white mt-5">
+              <FontAwesomeIcon
+                icon="map-marker-alt"
+                style={{ marginRight: '2rem' }}
+              />
               Puerto Ordaz, Venezuela.
             </p>
           </div>
@@ -116,7 +128,7 @@ const Footer = props => {
       </Wrapper>
       <Copy className="container-fluid text-center">
         <p className="text text--white">
-          All right reserved - vision paralela &copy; 2020
+          All rights reserved - Vision Paralela &copy; 2020
         </p>
       </Copy>
     </>

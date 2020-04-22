@@ -14,21 +14,31 @@ import {
   faLink,
   faCode,
   faChevronUp,
+  faMapMarkerAlt,
 } from '@fortawesome/free-solid-svg-icons'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 
 import Navbar from '../components/Navbar'
+import 'react-responsive-carousel/lib/styles/carousel.min.css'
 
 const StyledMain = styled.main`
   position: relative;
 `
 
-library.add(fab, faLink, faCode, faBars, faEnvelope, faChevronUp)
+library.add(
+  fab,
+  faLink,
+  faCode,
+  faBars,
+  faEnvelope,
+  faChevronUp,
+  faMapMarkerAlt
+)
 
 const Layout = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
-      <SEO title="Vision paralela" />
+      <SEO title="Vision Paralela" />
       <Navbar />
       <StyledMain>{children}</StyledMain>
       <GlobalStyles />

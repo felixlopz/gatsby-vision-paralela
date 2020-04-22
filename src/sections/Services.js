@@ -1,5 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
+import Image from '../components/Image'
+
+// import ServicesPhotoOne from '../assets/images/services-1.png'
 
 const StyledServices = styled.section`
   padding-top: 6rem;
@@ -35,30 +38,6 @@ const ServicesItem = styled.div`
       content: '';
       position: absolute;
     }
-
-    ${props => {
-      if (props.type === 'one')
-        return ` 
-            &::before{
-              background: var(--primary);
-              top: -100px;
-              left:50%;
-              width: 209px;
-              height: 424px; 
-              z-index: -1;
-            }
-
-            &::after{
-              left: 80%;
-              top: -50px;
-              background: var(--primary-dark);
-              width: 209px;
-              height: 424px;
-              z-index: -1;
-            }
-          
-          `
-    }}
   }
 `
 
@@ -75,45 +54,52 @@ const Services = () => {
         <div className="col-12 col-md-6">
           <h2 className="sub-title">Personal Branding</h2>
           <p className="text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-            sodales nulla eu pellentesque dictum. Interdum et
+            Our personal branding is oriented on creating brands far beyond the
+            person, by giving attributes that are unique and easy to recognize.
           </p>
         </div>
         <ServicesCol
           className="col-12 col-md-6 d-flex justify-content-center"
           color="primary"
         >
-          <ServicesItem type="one" />
+          <ServicesItem>
+            <Image filename="services-1.png" />
+          </ServicesItem>
         </ServicesCol>
       </div>
       <div className="row align-items-md-center">
         <div className="col-12 col-md-6">
           <h2 className="sub-title">Content creation</h2>
           <p className="text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-            sodales nulla eu pellentesque dictum. Interdum et
+            We develop content that helps startups and innovation teams uncover
+            and communicate their compelling value.
           </p>
         </div>
         <ServicesCol
           className="col-12 col-md-6 d-flex justify-content-center"
           color="secondary"
         >
-          <ServicesItem type="two" />
+          <ServicesItem>
+            <Image filename="services-2.png" />
+          </ServicesItem>
         </ServicesCol>
       </div>
       <div className="row align-items-md-center">
         <div className="col-12 col-md-6">
           <h2 className="sub-title">Audiovisual production</h2>
           <p className="text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-            sodales nulla eu pellentesque dictum. Interdum et
+            Audiovisual content as short films and advertising spots allow us to
+            innovate and expand our services. We count with our own team of
+            audiovisual experts.
           </p>
         </div>
         <ServicesCol
           className="col-12 col-md-6 d-flex justify-content-center"
           color="tertiary"
         >
-          <ServicesItem type="three" />
+          <ServicesItem>
+            <Image filename="services-3.png" />
+          </ServicesItem>
         </ServicesCol>
       </div>
     </StyledServices>

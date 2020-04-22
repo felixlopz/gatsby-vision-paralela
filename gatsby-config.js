@@ -29,11 +29,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Felix Lopez Personal Portfolio`,
+        name: `Vision paralela landing page`,
         short_name: `Portfolio`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#0C141C`,
+        theme_color: `#460040`,
         display: `minimal-ui`,
         icon: `src/assets/favicon.png`,
       },

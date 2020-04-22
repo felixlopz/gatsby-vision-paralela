@@ -2,10 +2,11 @@ import React from 'react'
 import styled from 'styled-components'
 
 import ProductCard from '../components/ProductCard'
-import SliderGlide from '../components/SliderGlide'
+import ProductSlider from '../components/ProductSlider'
 
 const StyledProducts = styled.section`
-  margin-bottom: 5rem;
+  padding-bottom: 8rem;
+  overflow-x: hidden;
 `
 
 const products = [
@@ -43,28 +44,26 @@ const Products = () => {
     <StyledProducts>
       <div className="container">
         <div className="text-center">
-          <h1 className="title">
-            Lorem ipsum dolor <br></br> with our products
+          <h1 className="title" style={{ fontSize: '2.4rem' }}>
+            Take a look to our <br></br> gallery of products
           </h1>
-          <p className="text text--bold">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-            sodales Sornadiam
-          </p>
         </div>
-      </div>
-      <div style={{ paddingLeft: '15px', marginTop: '5rem' }}>
-        <SliderGlide
-          options={{
-            type: 'carousel',
-            startAt: 0,
-            perView: 1.5,
-            gap: 30,
-          }}
-        >
-          {products.map(product => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </SliderGlide>
+        <div className="mt-5">
+          <ProductSlider
+            options={{
+              type: 'slider',
+              rewind: true,
+              startAt: 0,
+              focusAt: 0,
+              perView: 1.5,
+              gap: 50,
+            }}
+          >
+            {products.map(product => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </ProductSlider>
+        </div>
       </div>
     </StyledProducts>
   )
