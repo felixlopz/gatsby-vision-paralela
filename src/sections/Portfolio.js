@@ -98,8 +98,8 @@ const StyledPortfolioItem = styled.article`
 
   .item {
     &__heading {
-      width: 346px;
-      height: 360px;
+      width: 100%;
+      overflow: hidden;
     }
 
     &__body {
